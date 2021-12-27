@@ -1,0 +1,42 @@
+mixin links
+    ul
+        each val in ["home","services","portfolio","about","pricing","contact"]
+            li
+                a(href="#"+val)= val 
+        .search
+            i(class="fas fa-search")
+
+
+mixin headin(h3text)
+    .head
+        h3= h3text
+        p Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Mauris blandit aliquet elit, eget tincidunt.
+
+
+mixin cards(iclass)
+    .card
+        |
+        i(class=iclass)
+        div
+            h5 Vorem amet intuitive
+            p
+                |Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Mauris blandit aliquet elit, eget
+                |tincidunt nibh pulvinar a. Curabitur aliquet quam.
+
+
+mixin imgs(surc)
+    .card
+        img(src=surc, alt="")
+        .text
+            h5 Awesome Image
+            p photography
+
+
+
+mixin ah
+    -for(let i =0;i<icons.length;i++)
+        .card
+            i(class=icons[i])
+            .count #{count[i]}
+            .namecount #{namecount[i]}
+

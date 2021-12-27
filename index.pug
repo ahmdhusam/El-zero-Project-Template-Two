@@ -1,0 +1,97 @@
+include pug/var.pug
+include pug/mixin.pug
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Test
+        include pug/css.pug
+    body
+        // 
+            
+            header
+
+
+        header.home
+            .container
+                .logo
+                    img(src="images/logo.png", alt="LogoImage")
+                .links
+                    +links
+        // 
+            
+            
+            BACKGROUND
+
+        .background
+            div
+                h2 hello world!
+                h3 we are kasper we make art.
+                p
+                    .
+                        Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Mauris blandit aliquet elit, eget tincidunt
+                        nibh pulvinar a. Curabitur aliquet quam. Accumsan id imperdiet et, porttitor at sem. Mauris blandit aliquet
+                        elit, eget tincidunt.
+            span.dot
+        // 
+            
+            SERVICES
+
+            
+        .services
+            .container
+                +headin("services")
+                .serv
+                    each val in ["fas fa-tv","fab fa-angular","fab fa-apple-pay","fab fa-app-store-ios"]
+                        +cards(val)
+        .afterserv
+            .photo
+                img(src="images/mobile.png", alt="")
+            .card
+                h5 OUR DESIGN COMES WITH...
+                ul
+                    each val in ["Responsive Design","Modern And Clean Design","Clean Code","Browser Friendly"]
+                        li
+                            i(class="fas fa-tv")
+                            | #{val}
+
+        //
+            PORTFOLIO
+
+
+        .portfolio
+            +headin("portfolio")
+            .links
+                ul
+                    each val in ["all","app","photo","web","print"]
+                        li= val
+            .photos
+                - for(let i=1;i<=8;i++)
+                    +imgs("images/shuffle-0"+i+".jpg")
+                span more
+            .video
+                video(src="images/awesome-video.mp4" autoplay muted loop type="video/mp4")
+                .text
+                    h5 SUPER AWESOME VIDEO HERE
+                    p Its All You Need
+                    span see more
+
+        //
+            ABOUT
+
+            
+        .about
+            +headin("about us")
+            .land
+                img(src="images/about.png", alt="")
+            .stats
+                div.img
+                    img(src="images/stats.png", alt="")
+                div.cards
+                    +ah
+            
+            .profile
+                .testmonails
+        script(src="index.js") 
